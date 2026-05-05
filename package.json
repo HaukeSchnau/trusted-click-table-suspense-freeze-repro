@@ -1,0 +1,27 @@
+{
+  "name": "trusted-click-table-suspense-freeze-repro",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview:repro": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
+    "check": "tsc --noEmit && vite build",
+    "repro:agent-browser": "node scripts/local-repro.mjs",
+    "repro": "node scripts/playwriter-repro.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "8.21.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "typescript": "5.9.3",
+    "vite": "7.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "playwriter": "0.1.0"
+  }
+}
