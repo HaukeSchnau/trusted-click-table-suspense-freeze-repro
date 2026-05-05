@@ -19,8 +19,13 @@ React Compiler, or Vite React plugin.
 
 ## Reproduction
 
+Standalone repro:
+
+https://github.com/HaukeSchnau/trusted-click-table-suspense-freeze-repro
+
 ```sh
-cd ~/Code/trusted-click-table-suspense-freeze-repro
+git clone https://github.com/HaukeSchnau/trusted-click-table-suspense-freeze-repro.git
+cd trusted-click-table-suspense-freeze-repro
 pnpm install
 pnpm check
 PLAYWRITER_SESSION=5 pnpm repro
