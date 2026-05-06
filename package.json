@@ -7,8 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview:repro": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
-    "check": "tsc --noEmit && vite build",
-    "repro": "node scripts/playwriter-repro.mjs"
+    "check": "tsc --noEmit && vite build"
   },
   "dependencies": {
     "@tanstack/react-table": "8.21.3",
@@ -20,7 +19,6 @@
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "playwriter": "0.1.0"
+    "@types/react-dom": "latest"
   }
 }

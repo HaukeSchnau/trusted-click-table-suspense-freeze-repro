@@ -12,7 +12,7 @@ cookies, APIs, TanStack Router, TanStack Query, React Compiler, or Vite React pl
 - React `19.2.3`
 - `@tanstack/react-table` `8.21.3`
 - Vite `7.3.0`
-- Chrome with a real pointer event driven through Playwriter
+- Chrome
 
 ## Reproduction
 
@@ -21,31 +21,14 @@ git clone https://github.com/HaukeSchnau/trusted-click-table-suspense-freeze-rep
 cd trusted-click-table-suspense-freeze-repro
 pnpm install
 pnpm check
-PLAYWRITER_SESSION=<your-playwriter-session-id> pnpm repro
-```
-
-Expected output:
-
-```json
-{
-  "baseUrl": "http://127.0.0.1:4174",
-  "ok": true,
-  "result": {
-    "label": "synchronous active row render",
-    "expected": "freeze",
-    "actual": "freeze",
-    "clickTimedOut": true
-  }
-}
-```
-
-Manual repro:
-
-```sh
 pnpm preview:repro
 ```
 
 Then open `http://127.0.0.1:4174/` in Chrome and click `Synchronous active row`.
+
+Expected: the click completes and the page remains responsive.
+
+Actual: the Chrome tab freezes during the click.
 
 ## Reduced Trigger
 
@@ -95,6 +78,5 @@ function App() {
 
 ## Failure Signal
 
-The Playwriter oracle performs a real Chrome mouse-down/mouse-up sequence on the button with an
-8 second timeout. In the failing case, `page.mouse.up()` never returns before the timeout, which
-indicates that the renderer event loop is frozen.
+After clicking `Synchronous active row`, the Chrome tab stops responding. Reloading or closing the
+tab is required to recover.
