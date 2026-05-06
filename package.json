@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview:repro": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
     "check": "tsc --noEmit && vite build",
-    "repro:agent-browser": "node scripts/local-repro.mjs",
     "repro": "node scripts/playwriter-repro.mjs"
   },
   "dependencies": {
